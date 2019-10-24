@@ -8,10 +8,22 @@
     "@babel/core": "^7.6.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
-    "webpack": "^4.41.0",
+    "@webpack-cli/init": "^0.2.2",
+    "axios": "^0.19.0",
+    "babel-loader": "8.0.0-beta.0",
     "webpack-cli": "^3.3.9"
   },
   "scripts": {
-    "dev": "babel ./array.js -o bundle.js -w"
+    "clean": "rm dist/bundle.js",
+    "build-dev": "webpack -d --mode development",
+    "build-prod": "webpack -p --mode production",
+    "dev": "webpack-dev-server --mode development"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-async-to-generator": "^7.5.0",
+    "@babel/polyfill": "^7.6.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.9.0"
   }
 }
